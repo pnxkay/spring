@@ -1,16 +1,16 @@
-package com.example.demo.comtroller;
+package com.example.demo.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class IndexController {
 	
 	@RequestMapping("/")
-	@ResponseBody
-	public String index() {
-		return "Hello World!";
+	public String index(Model m) {
+		m.addAttribute("message","Hello Spring Boot!");
+		return "index";
 	}
 
 }
